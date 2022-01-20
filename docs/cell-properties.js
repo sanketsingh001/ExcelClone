@@ -87,6 +87,33 @@ underline.style.backgroundColor=cellProp.underline? activecolorProp : inactiveCo
 })
 
 
+fontSize.addEventListener("change",(e)=>{
+    let address=addressbar.value;
+    let[cell, cellProp]=activecell(address);
+
+    cellProp.fontSize=fontSize.value;//Data Change
+
+    cell.style.fontSize=cellProp.fontSize+"px";
+    fontSize.value=cellProp.fontSize;
+})
+
+fontFamily.addEventListener("change",(e)=>{
+    let address=addressbar.value;
+    let[cell, cellProp]=activecell(address);
+
+    cellProp.fontFamily=fontFamily.value;//Data Change
+
+    cell.style.fontFamily=cellProp.fontFamily;
+    fontFamily.value=cellProp.fontFamily;
+    
+})
+
+
+//COlor and BG color
+
+
+
+
 function activecell(address){
    let [rid,cid]= decodeRIDCIDFromAddress(address);
 //Access Cell and storing in Storage
