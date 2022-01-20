@@ -30,7 +30,7 @@ let fontSize=document.querySelector(".font-size-prop");
 let fontFamily=document.querySelector(".font-family-prop");
 let fontColor=document.querySelector(".font-color-prop");
 
-let BGColor=document.querySelector(".BGColor");
+let BGColor=document.querySelector(".BGcolor-prop");
 let alignment=document.querySelectorAll(".alignment");
 
 let leftAlign=alignment[0];
@@ -110,6 +110,26 @@ fontFamily.addEventListener("change",(e)=>{
 
 
 //COlor and BG color
+fontColor.addEventListener("change",(e)=>{
+    let address=addressbar.value;
+    let[cell, cellProp]=activecell(address);
+
+
+    cellProp.fontColor=fontColor.value;//Data Change
+
+    cell.style.color=cellProp.fontColor;
+    fontColor.value=cellProp.fontColor;
+})
+BGColor.addEventListener("change",(e)=>{
+    let address=addressbar.value;
+    let[cell, cellProp]=activecell(address);
+
+
+    cellProp.BGColor=BGColor.value;//Data Change
+
+    cell.style.backgroundColor=cellProp.BGColor;
+    BGColor.value=cellProp.BGColor;
+})
 
 
 
