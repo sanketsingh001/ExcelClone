@@ -7,10 +7,10 @@ bold:false,
 italic:false,
 underline:false,
 alignment:"left",
-fontFamily: "monospace",
+fontFamily: "Noto Sans",
 fontSize:"14",
 fontColor: "#000000",
-BGColor:"#000000"// Just for indication purpose
+BGColor:"#ecf0f1"// Just for indication purpose
 
         }
 sheetRow.push(cellProp);
@@ -171,6 +171,70 @@ alignment.forEach((alignElem) => {
     })
 
 })
+
+//UI change for each click on cell
+let allcells=document.querySelectorAll(".cell");
+for(let i=0 ;i<allcells.length;i++){
+    addListenerToAttachCellProperties(allcells[i])
+}
+function addListenerToAttachCellProperties(cell){
+    cell.addEventListener("click",(e)=>{
+    let address= addressbar.value;
+    let[cell, cellProp]=activecell(address);
+     
+
+
+
+        //Apply cell properties
+        cell.style.fontWeight=cellProp.bold? "bold":"normal";
+        cell.style.fontStyle=cellProp.italic? "italic":"normal";
+        cell.style.textDecoration=cellProp.underline? "underline":"none";
+        cell.style.fontSize=cellProp.fontSize+"px";
+        cell.style.fontFamily=cellProp.fontFamily;
+        cell.style.color=cellProp.fontColor;
+        cell.style.backgroundColor=cellProp.BGColor;
+        cell.style.textAlign=cellProp.alignment;
+
+        switch(cellProp.alignment){//ui change part 2
+
+            case "left":
+                leftAlign.style.backgroundColor=activecolorProp;
+                centerAlign.style.backgroundColor=inactiveColorProp;
+                rightAlign.style.backgroundColor=inactiveColorProp;
+                break;
+            case "center":
+                centerAlign.style.backgroundColor=activecolorProp;
+                leftAlign.style.backgroundColor=inactiveColorProp
+                
+                rightAlign.style.backgroundColor=inactiveColorProp;
+                break;
+            case "right":
+                rightAlign.style.backgroundColor=activecolorProp;
+                leftAlign.style.backgroundColor= inactiveColorProp;
+                centerAlign.stylebackgroundColor= inactiveColorProp;
+                
+                break;
+        }
+
+
+        //Apply UI properties to all containers
+
+bold.style.backgroundColor=cellProp.bold? activecolorProp : inactiveColorProp;
+italic.style.backgroundColor=cellProp.italic? activecolorProp : inactiveColorProp;
+underline.style.backgroundColor=cellProp.underline? activecolorProp : inactiveColorProp;
+fontSize.value=cellProp.fontSize;
+fontFamily.value=cellProp.fontFamily;
+fontColor.value=cellProp.fontColor;
+BGColor.value=cellProp.BGColor;
+
+
+
+
+
+    })
+
+}
+
 
 
 
