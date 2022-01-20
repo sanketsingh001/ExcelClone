@@ -38,7 +38,7 @@ let centerAlign=alignment[1];
 let rightAlign=alignment[2];
 
  let activecolorProp="#d1d8e0"
- let inactiveColorProp="#ecf0d1"
+ let inactiveColorProp="#ecf0f1"
 
 //Attach property listeners
 //Application of Two way Binding
@@ -129,6 +129,47 @@ BGColor.addEventListener("change",(e)=>{
 
     cell.style.backgroundColor=cellProp.BGColor;
     BGColor.value=cellProp.BGColor;
+})
+
+
+//Alignment for Texts
+alignment.forEach((alignElem) => {
+    alignElem.addEventListener("click",(e)=>{
+        //accesing cell
+        let address=addressbar.value;
+        let[cell, cellProp]=activecell(address);
+
+
+        let alignValue=e.target.classList[0];
+        cellProp.alignment=alignValue;//Data Change
+        cell.style.textAlign=cellProp.alignment;
+  
+        
+
+        switch(alignValue){//ui change part 2
+
+            case "left":
+                leftAlign.style.backgroundColor=activecolorProp;
+                centerAlign.style.backgroundColor=inactiveColorProp;
+                rightAlign.style.backgroundColor=inactiveColorProp;
+                break;
+            case "center":
+                centerAlign.style.backgroundColor=activecolorProp;
+                leftAlign.style.backgroundColor=inactiveColorProp
+                
+                rightAlign.style.backgroundColor=inactiveColorProp;
+                break;
+            case "right":
+                rightAlign.style.backgroundColor=activecolorProp;
+                leftAlign.style.backgroundColor= inactiveColorProp;
+                centerAlign.stylebackgroundColor= inactiveColorProp;
+                
+                break;
+        }
+
+
+    })
+
 })
 
 
