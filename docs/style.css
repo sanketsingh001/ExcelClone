@@ -29,6 +29,19 @@ body{
     display: inline-block;
     margin-right: 1rem;
 }
+.color-promp{
+ position: relative;
+}
+.color-promp > input{
+position: absolute;
+top: 0;
+left: 0;
+opacity: 0;
+height: 100%;
+width: 100%;
+
+}
+
 .font-family-prop{
     padding: 0.2rem;
     
