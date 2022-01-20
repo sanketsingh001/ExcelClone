@@ -29,6 +29,9 @@ body{
     display: inline-block;
     margin-right: 1rem;
 }
+.cellprops-actions-cont > *:hover{
+    cursor: pointer;
+}
 .color-promp{
  position: relative;
 }

@@ -27,6 +27,11 @@ for(let i=0;i<rows;i++ ){
         let cell=document.createElement("div");
         cell.setAttribute("class","cell");
         cell.setAttribute("contenteditable","true");
+      //removes the red underline for spell checkl
+        cell.setAttribute("spellcheck",false);
+        //attributes for cell and storage identification
+        cell.setAttribute("rid",i);
+       cell.setAttribute("cid",j);
         rowCont.appendChild(cell);
         addListenerForAddressBarDisplay(cell,i,j);
 
@@ -45,3 +50,7 @@ addressbar.value=`${colID }${rowID}`;
     })
 
 }
+
+//By default clicking on First cell(This will by default click on first cell via Dom)
+let firstCell=document.querySelector(".cell");
+firstCell.click();
