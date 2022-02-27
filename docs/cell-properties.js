@@ -13,6 +13,7 @@ fontColor: "#000000",
 BGColor:"#ecf0f1",// Just for indication purpose
 value:"",
 formula:"",
+children:[],
         }
 sheetRow.push(cellProp);
       }
