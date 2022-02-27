@@ -10,8 +10,9 @@ alignment:"left",
 fontFamily: "Noto Sans",
 fontSize:"14",
 fontColor: "#000000",
-BGColor:"#ecf0f1"// Just for indication purpose
-
+BGColor:"#ecf0f1",// Just for indication purpose
+value:"",
+formula:"",
         }
 sheetRow.push(cellProp);
       }
