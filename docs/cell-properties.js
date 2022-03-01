@@ -168,6 +168,7 @@ alignment.forEach((alignElem) => {
                 
                 break;
         }
+      
 
 
     })
@@ -217,6 +218,9 @@ function addListenerToAttachCellProperties(cell){
                 
                 break;
         }
+        let formulaBar=document.querySelector(".formula-bar");
+        formulaBar.value=cellProp.formula;
+        cell.value=cellProp.value;
 
 
         //Apply UI properties to all containers
