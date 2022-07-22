@@ -52,5 +52,3 @@ addressbar.value=`${colID }${rowID}`;
 }
 
 //By default clicking on First cell(This will by default click on first cell via Dom)
-let firstCell=document.querySelector(".cell");
-firstCell.click();

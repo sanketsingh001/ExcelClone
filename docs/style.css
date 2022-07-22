@@ -111,6 +111,10 @@ height: 3rem;
 width: 2vw;
 }
 
+.sheet-add-icon:hover{
+    cursor:pointer;
+    }
+
 
 .sheets-folder-cont{
     height: 80%;
@@ -120,13 +124,29 @@ width: 2vw;
    display: flex;
    align-items: center; 
    padding-left: 0.5rem;
+   overflow: auto;
+ 
 
 }
 .sheet-folder{
+    height: 80%;
     text-decoration: underline;
     font-weight: bold;
     text-decoration-thickness: 3px;
+    /* background-color: lightblue; */
+    text-align: center;
 font-size: 0.9rem;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+.sheet-content{
+    width: 5rem;
+    /* background-color: lightgreen; */
+
+
 }
 
 

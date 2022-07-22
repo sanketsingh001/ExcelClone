@@ -1,24 +1,33 @@
+
+let collectedSheetDB=[]//contains all sheet DB
+
 let sheetDB=[];
-  for(let i=0;i<rows;i++){
-     let  sheetRow=[];
-      for(let j=0;j<cols;j++){
-        let cellProp={
-bold:false,
-italic:false,
-underline:false,
-alignment:"left",
-fontFamily: "Noto Sans",
-fontSize:"14",
-fontColor: "#000000",
-BGColor:"#ecf0f1",// Just for indication purpose
-value:"",
-formula:"",
-children:[],
-        }
-sheetRow.push(cellProp);
-      }
-      sheetDB.push(sheetRow);
-  }
+{
+    let addSheetBtn=document.querySelector(".sheet-add-icon");
+    addSheetBtn.click();
+    // handleSheetProperties();
+}
+
+//   for(let i=0;i<rows;i++){
+//      let  sheetRow=[];
+//       for(let j=0;j<cols;j++){
+//         let cellProp={
+// bold:false,
+// italic:false,
+// underline:false,
+// alignment:"left",
+// fontFamily: "Noto Sans",
+// fontSize:"14",
+// fontColor: "#000000",
+// BGColor:"#ecf0f1",// Just for indication purpose
+// value:"",
+// formula:"",
+// children:[],
+//         }
+// sheetRow.push(cellProp);
+//       }
+//       sheetDB.push(sheetRow);
+//   }
 
 //Selectors for cell Properties
 
@@ -220,7 +229,7 @@ function addListenerToAttachCellProperties(cell){
         }
         let formulaBar=document.querySelector(".formula-bar");
         formulaBar.value=cellProp.formula;
-        cell.value=cellProp.value;
+        cell.innerText=cellProp.value;
 
 
         //Apply UI properties to all containers
